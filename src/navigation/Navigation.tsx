@@ -4,6 +4,7 @@ import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { DrawerNavigator } from './DrawerNavigator';
+import { Contact } from '../screens/Contact/Contact';
 
 interface NavigationProps {}
 
@@ -16,19 +17,6 @@ const MyTheme = {
   },
 };
 
-const Feed = ({ navigation }) => {
-  return (
-    <View style={styles.container}>
-      <Text>Feed Screen</Text>
-      <Button title="Go to Root" onPress={() => navigation.navigate('Root')} />
-      <Button
-        title="Go to Root, Profile"
-        onPress={() => navigation.navigate('Root', { screen: 'Profile' })}
-      />
-    </View>
-  );
-};
-
 const Stack = createNativeStackNavigator();
 
 const Tabs = createBottomTabNavigator();
@@ -37,7 +25,7 @@ const StackNavigator = () => {
   return (
     <Stack.Navigator theme={MyTheme}>
       <Stack.Screen name="Root" component={DrawerNavigator} options={{ headerShown: false }} />
-      <Stack.Screen name="Feed" component={Feed} />
+      <Stack.Screen name="Contact" component={Contact} />
     </Stack.Navigator>
   );
 };
@@ -47,7 +35,7 @@ const Navigation: FC<NavigationProps> = ({}) => {
     <NavigationContainer theme={MyTheme}>
       <Tabs.Navigator>
         <Tabs.Screen name="Home" component={StackNavigator} options={{ headerShown: false }} />
-        <Tabs.Screen name="Feed" component={Feed} options={{ headerShown: false }} />
+        <Tabs.Screen name="Contact" component={Contact} options={{ headerShown: false }} />
       </Tabs.Navigator>
     </NavigationContainer>
   );
