@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { DrawerSceneWrapper } from '../../components/DrawerSceneWrapper/DrawerSceneWrapper';
-import { colors } from '../../theme';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Menu } from '../../components/Menu/Menu';
 
 interface StartProps {}
 
@@ -10,8 +11,9 @@ export const Start: FC<StartProps> = ({ navigation }) => {
   return (
     <DrawerSceneWrapper>
       <View style={styles.container}>
-        <Text>Start</Text>
-        <Button title="button" onPress={openDrawer} />
+        <SafeAreaView>
+          <Menu title="Start" onPress={openDrawer} />
+        </SafeAreaView>
       </View>
     </DrawerSceneWrapper>
   );
@@ -20,12 +22,6 @@ export const Start: FC<StartProps> = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  content: {
-    flex: 1,
-    paddingTop: 0,
-    backgroundColor: colors.white,
+    paddingHorizontal: 20,
   },
 });
