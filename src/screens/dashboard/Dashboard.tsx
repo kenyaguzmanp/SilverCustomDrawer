@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
-import { DrawerSceneWrapper } from '../../../components/DrawerSceneWrapper/DrawerSceneWrapper';
+import { DrawerSceneWrapper } from '../../components/DrawerSceneWrapper/DrawerSceneWrapper';
 
 interface DashboardProps {}
 
