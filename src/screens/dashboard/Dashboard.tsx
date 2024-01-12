@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 import { DrawerSceneWrapper } from '../../components/DrawerSceneWrapper/DrawerSceneWrapper';
+import { colors } from '../../theme';
 
 interface DashboardProps {}
 
@@ -25,6 +26,6 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     paddingTop: 0,
-    backgroundColor: 'cyan',
+    backgroundColor: colors.white,
   },
 });

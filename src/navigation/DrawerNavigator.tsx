@@ -1,12 +1,11 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import React, { FC } from 'react';
-import { Dashboard } from '../screens/dashboard/Dashboard';
 import { CustomDrawerContent } from './CustomDrawerContent';
 import { Start } from '../screens/StartScreen/Start';
 import { YourCart } from '../screens/YourCart/YourCart';
 import { Favourites } from '../screens/Favourites/Favourites';
 import { YourOrders } from '../screens/YourOrders/YourOrders';
-import { Text } from 'react-native';
+import { colors } from '../theme';
 
 interface DrawerNavigatorProps {}
 
@@ -19,6 +18,9 @@ export const DrawerNavigator: FC<DrawerNavigatorProps> = () => {
       screenOptions={{
         drawerStyle: {
           width: '50%',
+        },
+        drawerLabelStyle: {
+          color: colors.white,
         },
         headerShown: false,
         drawerType: 'back',

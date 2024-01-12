@@ -2,6 +2,7 @@ import { DrawerItem, DrawerItemList, useDrawerProgress } from '@react-navigation
 import React, { FC } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Animated, { interpolate, useAnimatedStyle } from 'react-native-reanimated';
+import { colors, getMarginTopInterpolationAnimation } from '../theme';
 
 interface CustomDrawerContentProps {}
 
@@ -28,7 +29,11 @@ export const CustomDrawerContent: FC<CustomDrawerContentProps> = (props) => {
         <Text style={styles.title}>Beka</Text>
         <View style={styles.itemsContainer}>
           <DrawerItemList {...props} />
-          <DrawerItem label="Sign Out" onPress={() => alert('Are your sure?')} />
+          <DrawerItem
+            label="Sign Out"
+            labelStyle={styles.itemDrawerLabel}
+            onPress={() => alert('Are your sure?')}
+          />
         </View>
       </Animated.View>
     </Animated.View>
@@ -38,17 +43,22 @@ export const CustomDrawerContent: FC<CustomDrawerContentProps> = (props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
   },
   content: {
     flex: 1,
-    backgroundColor: 'pink',
+    backgroundColor: colors.darkBlue,
   },
   title: {
     paddingTop: 80,
     paddingBottom: 40,
     paddingHorizontal: 25,
     alignSelf: 'center',
+    color: colors.white,
+  },
+  itemDrawerLabel: {
+    color: colors.white,
+    paddingVertical: 30,
   },
   itemsContainer: {
     padding: 10,

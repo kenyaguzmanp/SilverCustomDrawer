@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { DrawerSceneWrapper } from '../../components/DrawerSceneWrapper/DrawerSceneWrapper';
+import { colors } from '../../theme';
 
 interface FavouritesProps {}
 
@@ -23,6 +24,6 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     paddingTop: 0,
-    backgroundColor: 'cyan',
+    backgroundColor: colors.white,
   },
 });

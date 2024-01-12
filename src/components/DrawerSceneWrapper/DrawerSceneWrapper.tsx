@@ -2,6 +2,7 @@ import { useDrawerProgress } from '@react-navigation/drawer';
 import React, { FC } from 'react';
 import { Platform, StyleSheet, useWindowDimensions } from 'react-native';
 import Animated, { interpolate, useAnimatedStyle } from 'react-native-reanimated';
+import { colors } from '../../theme';
 
 interface DrawerSceneWrapperProps {}
 
@@ -52,10 +53,10 @@ export const DrawerSceneWrapper: FC<DrawerSceneWrapperProps> = ({ children }) =>
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'pink',
+    backgroundColor: colors.darkBlue,
   },
   content: {
     flex: 1,
-    backgroundColor: 'cyan',
+    backgroundColor: colors.white,
   },
 });
