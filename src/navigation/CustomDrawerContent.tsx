@@ -55,10 +55,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 25,
     alignSelf: 'center',
     color: colors.white,
+    fontSize: 25,
+    fontWeight: '900',
   },
   itemDrawerLabel: {
     color: colors.white,
     paddingVertical: 30,
+    fontSize: 18,
+    paddingLeft: 10,
   },
   itemsContainer: {
     padding: 10,

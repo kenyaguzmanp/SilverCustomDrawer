@@ -21,6 +21,8 @@ export const DrawerNavigator: FC<DrawerNavigatorProps> = () => {
         },
         drawerLabelStyle: {
           color: colors.white,
+          fontSize: 18,
+          paddingLeft: 10,
         },
         headerShown: false,
         drawerType: 'back',
@@ -29,9 +31,9 @@ export const DrawerNavigator: FC<DrawerNavigatorProps> = () => {
       initialRouteName="Start"
     >
       <Drawer.Screen name="Start" component={Start} />
-      <Drawer.Screen name="YourCart" component={YourCart} />
+      <Drawer.Screen name="Your Cart" component={YourCart} />
       <Drawer.Screen name="Favourites" component={Favourites} />
-      <Drawer.Screen name="YourOrders" component={YourOrders} />
+      <Drawer.Screen name="Your Orders" component={YourOrders} />
     </Drawer.Navigator>
   );
 };

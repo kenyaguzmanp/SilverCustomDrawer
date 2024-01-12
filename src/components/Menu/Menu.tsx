@@ -35,6 +35,8 @@ const styles = StyleSheet.create({
   },
   title: {
     paddingHorizontal: 30,
+    fontSize: 24,
+    letterSpacing: 3,
     textTransform: 'uppercase',
     color: colors.gray1,
   },

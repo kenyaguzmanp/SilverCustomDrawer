@@ -4,7 +4,7 @@ import { colors } from '../../theme';
 
 const HamburguerMenuIcon = () => {
   return (
-    <Svg width="24" height="24" fill="none">
+    <Svg width="30" height="30" fill="none" viewBox="0 0 24 24">
       <Path
         d="M4 18h16M4 12h16M4 6h16"
         stroke={colors.gray1}
