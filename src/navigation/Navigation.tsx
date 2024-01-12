@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { DrawerNavigator } from './DrawerNavigator';
 import { Contact } from '../screens/Contact/Contact';
+import { Favourites } from '../screens/Favourites/Favourites';
 
 interface NavigationProps {}
 
@@ -25,7 +26,7 @@ const StackNavigator = () => {
   return (
     <Stack.Navigator theme={MyTheme}>
       <Stack.Screen name="Root" component={DrawerNavigator} options={{ headerShown: false }} />
-      <Stack.Screen name="Contact" component={Contact} />
+      <Stack.Screen name="Favourites" component={Favourites} />
     </Stack.Navigator>
   );
 };
@@ -40,13 +41,5 @@ const Navigation: FC<NavigationProps> = ({}) => {
     </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 export default Navigation;

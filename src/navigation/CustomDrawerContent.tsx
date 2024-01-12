@@ -1,6 +1,6 @@
 import { DrawerItem, DrawerItemList, useDrawerProgress } from '@react-navigation/drawer';
 import React, { FC } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import Animated, { interpolate, useAnimatedStyle } from 'react-native-reanimated';
 
 interface CustomDrawerContentProps {}
@@ -25,8 +25,11 @@ export const CustomDrawerContent: FC<CustomDrawerContentProps> = (props) => {
   return (
     <Animated.View {...props} style={[styles.container, wrapperAnimatedStyle]}>
       <Animated.View style={[styles.content, contentAnimatedStyle]}>
-        <DrawerItemList {...props} />
-        <DrawerItem label="Sign Out" onPress={() => alert('Are your sure?')} />
+        <Text style={styles.title}>Beka</Text>
+        <View style={styles.itemsContainer}>
+          <DrawerItemList {...props} />
+          <DrawerItem label="Sign Out" onPress={() => alert('Are your sure?')} />
+        </View>
       </Animated.View>
     </Animated.View>
   );
@@ -39,7 +42,15 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    justifyContent: 'center',
     backgroundColor: 'pink',
+  },
+  title: {
+    paddingTop: 80,
+    paddingBottom: 40,
+    paddingHorizontal: 25,
+    alignSelf: 'center',
+  },
+  itemsContainer: {
+    padding: 10,
   },
 });
