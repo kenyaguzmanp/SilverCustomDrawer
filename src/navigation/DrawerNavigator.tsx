@@ -24,6 +24,10 @@ export const DrawerNavigator: FC<DrawerNavigatorProps> = () => {
           fontSize: 18,
           paddingLeft: 10,
         },
+        drawerActiveBackgroundColor: colors.darkRed1,
+        drawerItemStyle: {
+          borderRadius: 15,
+        },
         headerShown: false,
         drawerType: 'back',
         overlayColor: '1',

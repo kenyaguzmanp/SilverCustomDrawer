@@ -7,17 +7,9 @@ import { Contact } from '../screens/Contact/Contact';
 import { Favourites } from '../screens/Favourites/Favourites';
 import HomeIcon from '../SvgIcons/HomeIcon/HomeIcon';
 import { PeopleIcon } from '../SvgIcons/PeopleIcon/PeopleIcon';
+import { theme } from '../theme';
 
 interface NavigationProps {}
-
-const MyTheme = {
-  ...DefaultTheme,
-  colors: {
-    ...DefaultTheme.colors,
-    primary: 'rgb(255, 45, 85)',
-    background: '#FFFF',
-  },
-};
 
 const Stack = createNativeStackNavigator();
 
@@ -25,16 +17,16 @@ const Tabs = createBottomTabNavigator();
 
 const StackNavigator = () => {
   return (
-    <Stack.Navigator theme={MyTheme}>
+    <Stack.Navigator>
       <Stack.Screen name="Root" component={DrawerNavigator} options={{ headerShown: false }} />
       <Stack.Screen name="Favourites" component={Favourites} />
     </Stack.Navigator>
   );
 };
 
-const Navigation: FC<NavigationProps> = ({}) => {
+const Navigation: FC<NavigationProps> = () => {
   return (
-    <NavigationContainer theme={MyTheme}>
+    <NavigationContainer theme={theme}>
       <Tabs.Navigator>
         <Tabs.Screen
           name="Home"
