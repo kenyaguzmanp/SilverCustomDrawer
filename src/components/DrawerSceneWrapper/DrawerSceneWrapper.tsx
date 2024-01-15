@@ -8,7 +8,6 @@ interface DrawerSceneWrapperProps {}
 
 export const DrawerSceneWrapper: FC<DrawerSceneWrapperProps> = ({ children }) => {
   const progress = useDrawerProgress();
-  const { width } = useWindowDimensions();
 
   const contentAnimatedStyle = useAnimatedStyle(() => ({
     transform: [
@@ -22,7 +21,7 @@ export const DrawerSceneWrapper: FC<DrawerSceneWrapperProps> = ({ children }) =>
         translateX: interpolate(
           progress.value,
           [0, 1],
-          [0, Platform.OS === 'android' ? width - 130 : 50],
+          [0, Platform.OS === 'android' ? 30 : 50],
           'clamp'
         ),
       },
@@ -30,12 +29,12 @@ export const DrawerSceneWrapper: FC<DrawerSceneWrapperProps> = ({ children }) =>
         translateY: interpolate(
           progress.value,
           [0, 1],
-          [0, Platform.OS === 'android' ? width - 130 : 50],
+          [0, Platform.OS === 'android' ? 30 : 50],
           'clamp'
         ),
       },
     ],
-    borderRadius: interpolate(progress.value, [0, 1], [0, 50], 'clamp'),
+    borderRadius: interpolate(progress.value, [0, 1], [0, 20], 'clamp'),
     overflow: 'hidden',
   }));
 
@@ -58,5 +57,6 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     backgroundColor: colors.white,
+    paddingTop: 20,
   },
 });
